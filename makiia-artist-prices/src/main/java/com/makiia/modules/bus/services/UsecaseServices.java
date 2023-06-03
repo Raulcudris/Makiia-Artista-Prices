@@ -34,7 +34,7 @@ public class UsecaseServices <T, K> {
      * @throws EBusinessException  excepcion
      * @throws MicroEventException excepcion
      */
-    public List<T> getAll() throws EBusinessException, MicroEventException {
+    public EntyRecmaetarivalorResponse getAll() throws EBusinessException, MicroEventException {
         String transactionalId = UUID.randomUUID().toString();
 
         try {

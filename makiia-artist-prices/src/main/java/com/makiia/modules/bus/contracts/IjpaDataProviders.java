@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface  IjpaDataProviders<T> {
 
-    List<T> getAll() throws EBusinessException;
+    EntyRecmaetarivalorResponse getAll() throws EBusinessException;
 
     EntyRecmaetarivalorResponse getAll (int currentPage , int PageSize, String filter) throws EBusinessException;
 

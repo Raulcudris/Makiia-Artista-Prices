@@ -10,7 +10,6 @@ import com.makiia.crosscutting.patterns.Translator;
 import com.makiia.crosscutting.persistence.entity.EntyRecmaetarivalor;
 import com.makiia.crosscutting.persistence.repository.EntyRecmaetarivalorRepository;
 import com.makiia.modules.prices.dataproviders.IjpaEntyRecmaetarivalorDataProviders;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
@@ -24,7 +23,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Log4j2
 @DataProvider
 public class JpaEntyRecmaetarivalorDataProviders implements IjpaEntyRecmaetarivalorDataProviders {
     @Autowired
@@ -36,19 +34,32 @@ public class JpaEntyRecmaetarivalorDataProviders implements IjpaEntyRecmaetariva
     @Qualifier("entyRecmaetarivalorDtoToEntityTranslate")
     private Translator<EntyRecmaetarivalorDto, EntyRecmaetarivalor> dtoToEntityTranslate;
 
+
     @Override
-    public List<EntyRecmaetarivalorDto> getAll() throws EBusinessException {
-        List<EntyRecmaetarivalorDto> dtos = new ArrayList<>();
+    public EntyRecmaetarivalorResponse getAll() throws EBusinessException {
         try {
             List<EntyRecmaetarivalor> responses = (List<EntyRecmaetarivalor>) repository.findAll();
+            int currentPage=0;
+            int totalPageSize=responses.size();
+            Pageable pageable = PageRequest.of(currentPage, totalPageSize);
+            //Pageable paginacion
+            Page<EntyRecmaetarivalor> ResponsePage = null;
+            ResponsePage = repository.findAll(pageable);
 
-            if (!responses.isEmpty()) {
-                for (EntyRecmaetarivalor response : responses) {
-                    dtos.add(saveResponseTranslate.translate(response));
-                }
-            }
+            List<EntyRecmaetarivalor> ListPage = ResponsePage.getContent();
+            List<EntyRecmaetarivalorDto> content  = ListPage.stream().map(p ->mapToDto(p)).collect(Collectors.toList());
 
-            return dtos;
+            EntyRecmaetarivalorResponse response = new EntyRecmaetarivalorResponse();
+            response.setRspMessage(response.getRspMessage());
+            response.setRspValue(response.getRspValue());
+
+            currentPage = currentPage + 1;
+            String nextPageUrl = "LocalHost";
+            String previousPageUrl = "LocalHost";
+            response.setRspPagination(headResponse(currentPage, totalPageSize, ResponsePage.getTotalElements(), ResponsePage.getTotalPages(), ResponsePage.hasNext(), ResponsePage.hasPrevious(), nextPageUrl, previousPageUrl));
+            response.setRspData(content);
+            return response;
+
         } catch (PersistenceException | DataAccessException e) {
             throw ExceptionBuilder.builder()
                     .withMessage(SearchMessages.SEARCH_ERROR_DESCRIPTION)
@@ -57,6 +68,7 @@ public class JpaEntyRecmaetarivalorDataProviders implements IjpaEntyRecmaetariva
                     .buildBusinessException();
         }
     }
+
 
     @Override
     public EntyRecmaetarivalorResponse getAll(int currentPage ,int totalPageSize,String filter) throws EBusinessException {
@@ -241,19 +253,6 @@ public class JpaEntyRecmaetarivalorDataProviders implements IjpaEntyRecmaetariva
         }
     }
 
-    /*
-    public void deleteAll(List<EntyDeleteDto> dto) throws EBusinessException {
-        try {
-            repository.deleteAll(dto);
-        } catch (PersistenceException | DataAccessException e) {
-            throw ExceptionBuilder.builder()
-                    .withMessage(SearchMessages.DELETE_ERROR_DESCRIPTION)
-                    .withCode(SearchMessages.DELETE_ERROR_ID)
-                    .withParentException(e)
-                    .buildBusinessException();
-        }
-    }
-    */
 
     private EntyRecmaetarivalorDto mapToDto(EntyRecmaetarivalor entyRecmaetarivalor){
         EntyRecmaetarivalorDto dto = new EntyRecmaetarivalorDto();

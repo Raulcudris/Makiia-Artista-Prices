@@ -15,7 +15,6 @@ import javax.annotation.PostConstruct;
 import javax.persistence.PersistenceException;
 import java.util.List;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @UseCase
 @Service

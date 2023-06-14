@@ -1,10 +1,18 @@
 package com.makiia.crosscutting.persistence.entity;
+import java.io.Serializable;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.*;
-import java.io.Serializable;
 
 @Data
 @Entity
@@ -72,11 +80,11 @@ public class EntyRecmaetarivalor implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "rec_valhor_retp")
-    private Double recValhorRetp;
+    private Long recValhorRetp;
 
     @Basic(optional = false)
     @Column(name = "rec_precio_retp")
-    private Double recPrecioRetp;
+    private Long recPrecioRetp;
 
     @Basic(optional = false)
     @Column(name = "rec_estreg_retp")

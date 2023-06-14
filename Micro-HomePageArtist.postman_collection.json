@@ -1,0 +1,985 @@
+{
+	"info": {
+		"_postman_id": "f4e81e73-0f6c-4e74-83e7-072fddf5cf5b",
+		"name": "Micro-HomePageArtist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25773512"
+	},
+	"item": [
+		{
+			"name": "Prices-getall-Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6071/api/prices?currentpage=1&pagesize=3&filter=105720010022",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "currentpage",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "3"
+						},
+						{
+							"key": "filter",
+							"value": "105720010022"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prices-getall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6071/api/prices/getall",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"prices",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prices-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"\",\r\n    \"rspMessage\": \"\",\r\n    \"rspParentKey\": \"\",\r\n    \"rspAppKey\": \"\",\r\n    \"rspData\": [\r\n        {\r\n            \"recSecregRetp\": \"NA\",\r\n            \"apjNroregAphp\": \"105720010022\",\r\n            \"recTipresRepe\": \"T001\",\r\n            \"recTituloRetp\": \"Raul Cidris MicrosServ\",\r\n            \"recNotmemRetp\": \"para este fin de semana\",\r\n            \"recNotdetRetp\": \"se hace un descuento especial para el primer cuarto de hora\",\r\n            \"recImage1Retp\": \"NA\",\r\n            \"recImage2Retp\": \"NA\",\r\n            \"recImage3Retp\": \"NA\",\r\n            \"recOrdvisRetp\": 0,\r\n            \"recTipmonRetm\": \"COP\",\r\n            \"recCanhorRetp\": 1,\r\n            \"recValhorRetp\": 5000.0,\r\n            \"recPrecioRetp\": 4000009.0,\r\n            \"recEstregRetp\": \"1\",\r\n            \"recTituloRepe\": \"NA\"\r\n        },\r\n        {\r\n            \"recSecregRetp\": \"NA\",\r\n            \"apjNroregAphp\": \"105720010022\",\r\n            \"recTipresRepe\": \"T001\",\r\n            \"recTituloRetp\": \"Fello Millon\",\r\n            \"recNotmemRetp\": \"Beneficios, la definición, estructura, flujo y almacenamiento de los mismos\",\r\n            \"recNotdetRetp\": \"Beneficios, la definición, estructura, flujo y almacenamiento de los mismos, la administración y disposición de la información y las responsabilidades que les compete a los distintos participantes del SGSSS obligados a reportar al Sistema Integral de Información de Salud.\",\r\n            \"recImage1Retp\": \"NA\",\r\n            \"recImage2Retp\": \"NA\",\r\n            \"recImage3Retp\": \"NA\",\r\n            \"recOrdvisRetp\": 2,\r\n            \"recTipmonRetm\": \"COP\",\r\n            \"recCanhorRetp\": 1,\r\n            \"recValhorRetp\": 5000.0,\r\n            \"recPrecioRetp\": 682000.0,\r\n            \"recEstregRetp\": \"1\",\r\n            \"recTituloRepe\": \"NA\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/prices/create",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"prices",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prices-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"\",\r\n    \"rspMessage\": \"\",\r\n    \"rspParentKey\": \"\",\r\n    \"rspAppKey\": \"\",\r\n    \"rspData\": [\r\n         {\r\n            \"recUnikeyRetp\": 34,\r\n            \"recSecregRetp\": \"2334\",\r\n            \"apjNroregAphp\": \"105720010022\",\r\n            \"recTipresRepe\": \"T001\",\r\n            \"recTituloRetp\": \"Raul Cidris MicrosServicio\",\r\n            \"recNotmemRetp\": \"para este fin de semana\",\r\n            \"recNotdetRetp\": \"se hace un descuento especial para el primer cuarto de hora\",\r\n            \"recImage1Retp\": \"NA\",\r\n            \"recImage2Retp\": \"NA\",\r\n            \"recImage3Retp\": \"NA\",\r\n            \"recOrdvisRetp\": 0,\r\n            \"recTipmonRetm\": \"COP\",\r\n            \"recCanhorRetp\": 1,\r\n            \"recValhorRetp\": 5000,\r\n            \"recPrecioRetp\": 4000009,\r\n            \"recEstregRetp\": \"1\"\r\n        },\r\n        {\r\n            \"recUnikeyRetp\": 35,\r\n            \"recSecregRetp\": \"2335\",\r\n            \"apjNroregAphp\": \"105720010022\",\r\n            \"recTipresRepe\": \"T001\",\r\n            \"recTituloRetp\": \"Fello Millon szzz\",\r\n            \"recNotmemRetp\": \"Beneficios, la definición, estructura, flujo y almacenamiento de los mismos\",\r\n            \"recNotdetRetp\": \"Beneficios, la definición, estructura, flujo y almacenamiento de los mismos, la administración y disposición de la información y las responsabilidades que les compete a los distintos participantes del SGSSS obligados a reportar al Sistema Integral de Información de Salud.\",\r\n            \"recImage1Retp\": \"NA\",\r\n            \"recImage2Retp\": \"NA\",\r\n            \"recImage3Retp\": \"NA\",\r\n            \"recOrdvisRetp\": 2,\r\n            \"recTipmonRetm\": \"COP\",\r\n            \"recCanhorRetp\": 1,\r\n            \"recValhorRetp\": 5000,\r\n            \"recPrecioRetp\": 682000,\r\n            \"recEstregRetp\": \"1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/prices/update",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"prices",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prices-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[  \r\n    {\r\n       \"recPKey\": 32\r\n    },\r\n    {\r\n       \"recPKey\": 33\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/prices/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"prices",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Countries-getall-Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/countries?currentpage=1&pagesize=3&parameter=KEY&filter=peru",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"countries"
+					],
+					"query": [
+						{
+							"key": "currentpage",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "3"
+						},
+						{
+							"key": "parameter",
+							"value": "KEY"
+						},
+						{
+							"key": "filter",
+							"value": "peru"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Countries-getall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/countries/getall",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"countries",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Countries-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"sisCodpaiSipa\": \"207\",\r\n        \"sisAbreviSipa\": \"PE\",\r\n        \"sisNombreSipa\": \"Peru\",\r\n        \"sisIndicaSipa\": \"58\",\r\n        \"sisNombrelSipa\": \"Republica Peruana\",\r\n        \"sisCodconSico\": \"NA\",\r\n        \"sisTimezoSipa\": \"America/Peru\",\r\n        \"sisEaradiSipa\": 6372,\r\n        \"sisSecdetSipa\": 0,\r\n        \"sisEstregSipa\": \"1\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/homepage-artist-service/api/v1/Countries/create",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"homepage-artist-service",
+						"api",
+						"v1",
+						"Countries",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Countries-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/homepage-artist-service/api/v1/Countries/206",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"homepage-artist-service",
+						"api",
+						"v1",
+						"Countries",
+						"206"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Countries-getId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/homepage-artist-service/api/v1/Countries/205",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"homepage-artist-service",
+						"api",
+						"v1",
+						"Countries",
+						"205"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter-getall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/filter/getall",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"filter",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter-getall-Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/filter?currentpage=1&pagesize=3&parameter=0&filter=20502000006",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "currentpage",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "3"
+						},
+						{
+							"key": "parameter",
+							"value": "0"
+						},
+						{
+							"key": "filter",
+							"value": "20502000006"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"OK\",\r\n    \"rspMessage\": \"OK\",\r\n    \"rspParentKey\": \"NA\",\r\n    \"rspAppKey\": \"NA\",\r\n    \"rspData\": [\r\n        {\r\n            \"recNroregRemc\": \"205020000004\",\r\n            \"recNroregReus\": \"205020000004\",\r\n            \"recNtokenReus\": \"5050\",\r\n            \"recTipfilRemc\": \"1\",\r\n            \"recModuloRemc\": \"M02\",\r\n            \"sisCodpaiSipa\": \"205\",\r\n            \"sisIdedptSidp\": \"205020\",\r\n            \"sisCodproSipr\": \"205020001000\",\r\n            \"recGeodisRemc\": 20,\r\n            \"recGeolatReus\": 10.466381073,\r\n            \"recGeolonReus\": -73.2608718872,\r\n            \"recGenmusReus\": \"1000 1001\",\r\n            \"recFecagiRemc\": \"2023/02/25\",\r\n            \"recFecagfRemc\": \"2023/10/30\",\r\n            \"recDiapunRemc\": \"mad17 man17 tar17 noc17\",\r\n            \"recKeyfilRemc\": \"+activo >1000 >1001\",\r\n            \"recKeytmpRemc\": \"NA\",\r\n            \"recKeytm1Remc\": \"NA\",\r\n            \"recKeytm2Remc\": \"NA\",\r\n            \"recKeytm3Remc\": \"NA\",\r\n            \"recKeytm4Remc\": \"NA\",\r\n            \"recErrauxRemc\": \"NA\",\r\n            \"recEstregRemc\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/filter/create",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"filter",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter-Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"OK\",\r\n    \"rspMessage\": \"OK\",\r\n    \"rspParentKey\": \"NA\",\r\n    \"rspAppKey\": \"NA\",\r\n    \"rspData\": [\r\n         {\r\n        \"recUnikeyRemc\": 1,\r\n        \"recNroregRemc\": \"205020000001\",\r\n        \"recNroregReus\": \"5050\",\r\n        \"recNtokenReus\": \"5050\",\r\n        \"recTipfilRemc\": \"1\",\r\n        \"recModuloRemc\": \"M02\",\r\n        \"sisCodpaiSipa\": \"205\",\r\n        \"sisIdedptSidp\": \"205020\",\r\n        \"sisCodproSipr\": \"205020001000\",\r\n        \"recGeodisRemc\": 20,\r\n        \"recGeolatReus\": 10.466381073,\r\n        \"recGeolonReus\": -73.2608718872,\r\n        \"recGenmusReus\": \"1000 1001\",\r\n        \"recFecagiRemc\": \"2020/02/24\",\r\n        \"recFecagfRemc\": \"2021/11/29\",\r\n        \"recDiapunRemc\": \"mad17 man17 tar17 noc17\",\r\n        \"recKeyfilRemc\": \"+activo >1000 >1001\",\r\n        \"recKeytmpRemc\": \"NA\",\r\n        \"recKeytm1Remc\": \"NA\",\r\n        \"recKeytm2Remc\": \"NA\",\r\n        \"recKeytm3Remc\": \"NA\",\r\n        \"recKeytm4Remc\": \"NA\",\r\n        \"recErrauxRemc\": \"NANANANANANA\",\r\n        \"recEstregRemc\": 1\r\n    },\r\n    {\r\n        \"recUnikeyRemc\": 2,\r\n        \"recNroregRemc\": \"205020000002\",\r\n        \"recNroregReus\": \"205020000002\",\r\n        \"recNtokenReus\": \"5050\",\r\n        \"recTipfilRemc\": \"1\",\r\n        \"recModuloRemc\": \"M03\",\r\n        \"sisCodpaiSipa\": \"205\",\r\n        \"sisIdedptSidp\": \"205020\",\r\n        \"sisCodproSipr\": \"205020001000\",\r\n        \"recGeodisRemc\": 20,\r\n        \"recGeolatReus\": 10.4663820267,\r\n        \"recGeolonReus\": -73.2608718872,\r\n        \"recGenmusReus\": \"1000 1002\",\r\n        \"recFecagiRemc\": \"2020/02/25\",\r\n        \"recFecagfRemc\": \"2021/11/30\",\r\n        \"recDiapunRemc\": \"mad17 man17 tar17 noc17\",\r\n        \"recKeyfilRemc\": \"+activo >1000 >1001\",\r\n        \"recKeytmpRemc\": \"NA\",\r\n        \"recKeytm1Remc\": \"NA\",\r\n        \"recKeytm2Remc\": \"NA\",\r\n        \"recKeytm3Remc\": \"NA\",\r\n        \"recKeytm4Remc\": \"NA\",\r\n        \"recErrauxRemc\": \"SELECT MATCH(artist.apj_keyloc_aphp) AGAINST (*1x1*>cantante* >valledupar**1x1* IN BOOLEAN MODE) AS relevancia,\",\r\n        \"recEstregRemc\": 2\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/filter/update",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"filter",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter-Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[  \r\n    {\r\n       \"recPKey\": 1\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/filter/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"filter",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comments-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"\",\r\n    \"rspMessage\": \"\",\r\n    \"rspParentKey\": \"\",\r\n    \"rspAppKey\": \"\",\r\n    \"rspData\": [\r\n        {\r\n            \"recIdentifkeyRcom\": \"NA\",\r\n            \"recProfiltypeRcom\": \"1\",\r\n            \"recProfilpkeyRcom\": \"1065885688\",\r\n            \"recProftypecmRcom\": \"1\",\r\n            \"recIdentifkeyReus\": \"1\",\r\n            \"apjIdentifkeyAphp\": \"1\",\r\n            \"recTreemlevelRcom\": \"1\",\r\n            \"recTreemkeymsRcom\": \"1\",\r\n            \"recTreemcountRcom\": 1,\r\n            \"recMessagorigRcom\": \"1\",\r\n            \"recMessagtypeRcom\": \"1\",\r\n            \"recMessagtconRcom\": \"1\",\r\n            \"recMessagbodyRcom\": \"Creacion de Comentario 23\",\r\n            \"recMessagdateRcom\": \"0001-01-01\",\r\n            \"recMessagtimeRcom\": 0.0,\r\n            \"recEditmddateRcom\": \"0001-01-01\",\r\n            \"recEditmdtimeRcom\": 0,\r\n            \"recEditdedateRcom\": \"0001-01-01\",\r\n            \"recEditdetimeRcom\": 0,\r\n            \"recClicpositiRcom\": 1,\r\n            \"recClicnegatvRcom\": 1,\r\n            \"recClicklegalRcom\": 1,\r\n            \"recCheckmarckRcom\": \"1\",\r\n            \"recCheckmdateRcom\": \"0001-01-01\",\r\n            \"recCheckmtimeRcom\": 0,\r\n            \"recOrdviewkeyRcom\": 1,\r\n            \"recRegisstateRcom\": \"1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/comments/create",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"comments",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comments-getall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/comments/getall",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"comments",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comments-getall-Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/comments?currentpage=1&pagesize=10&parameter=0&filter=1065885688",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "currentpage",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "10"
+						},
+						{
+							"key": "parameter",
+							"value": "0"
+						},
+						{
+							"key": "filter",
+							"value": "1065885688"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gallery-getall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6071/api/gallery/getall",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"gallery",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gallery-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"rspValue\": \"OK\",\r\n    \"rspMessage\": \"OK\",\r\n    \"rspParentKey\": \"NA\",\r\n    \"rspAppKey\": \"NA\",\r\n    \"rspData\": [\r\n        {\r\n            \"recNroregRegl\": \"NA\",\r\n            \"apjNroregAphp\": \"10572001003\",\r\n            \"recObservRegl\": \"En 1985 se asoció con el acordionero Orangel Maestre y lanzó un nuevo álbum, bajo el mismo sello discográfico\",\r\n            \"recGrprecRegr\": \"103\",\r\n            \"recTiprecRegl\": \"1\",\r\n            \"recNomrecRegl\": \"ART001_c2_presentacion.jpg\",\r\n            \"recOrdvisRegl\": 0,\r\n            \"recDrwpinRegl\": 1,\r\n            \"recRecax1Regl\": \"NA\",\r\n            \"recRecax2Regl\": \"NA\",\r\n            \"recRecax3Regl\": \"NA\",\r\n            \"recFecrecRegl\": \"0001-01-01\",\r\n            \"recHorrecRegl\": 0.0,\r\n            \"recRllaveRegl\": 0,\r\n            \"recEstregRegl\": \"1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/gallery/create",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"gallery",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gallery-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"OK\",\r\n    \"rspMessage\": \"OK\",\r\n    \"rspParentKey\": \"NA\",\r\n    \"rspAppKey\": \"NA\",\r\n    \"rspData\": [\r\n         {\r\n            \"recUnikeyRegl\": 611,\r\n            \"recNroregRegl\": \"REC0000203\",\r\n            \"apjNroregAphp\": \"10572001003\",\r\n            \"recObservRegl\": \"En 1985 se asoció con el acordionero Orangel Maestre y lanzó un nuevo álbum, bajo el mismo sello discográfico\",\r\n            \"recGrprecRegr\": \"103\",\r\n            \"recTiprecRegl\": \"1\",\r\n            \"recNomrecRegl\": \"ART001_c2_presentacion.jpg\",\r\n            \"recOrdvisRegl\": 1,\r\n            \"recDrwpinRegl\": 1,\r\n            \"recRecax1Regl\": \"NA\",\r\n            \"recRecax2Regl\": \"NA\",\r\n            \"recRecax3Regl\": \"NA\",\r\n            \"recFecrecRegl\": \"2023-05-30\",\r\n            \"recHorrecRegl\": 12.38,\r\n            \"recRllaveRegl\": 230530123802,\r\n            \"recEstregRegl\": \"1\"\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/gallery/update",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"gallery",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gallery-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[  \r\n    {\r\n       \"recPKey\": 600\r\n    },\r\n    {\r\n       \"recPKey\": 601\r\n    },\r\n    {\r\n       \"recPKey\": 602\r\n    },\r\n    {\r\n       \"recPKey\": 603\r\n    },\r\n    {\r\n       \"recPKey\": 604\r\n    },\r\n    {\r\n       \"recPKey\": 605\r\n    }\r\n   \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/gallery/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"gallery",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gallery-getall-Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6071/api/gallery?currentpage=1&pagesize=10&parameter=0&filter=10572001003",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"gallery"
+					],
+					"query": [
+						{
+							"key": "currentpage",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "10"
+						},
+						{
+							"key": "parameter",
+							"value": "0"
+						},
+						{
+							"key": "filter",
+							"value": "10572001003"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comments-getId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/comments/10651088522",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"comments",
+						"10651088522"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comments-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[  \r\n    {\r\n       \"recPKey\": 5\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/comments/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"comments",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comments-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"OK\",\r\n    \"rspMessage\": \"OK\",\r\n    \"rspParentKey\": \"NA\",\r\n    \"rspAppKey\": \"NA\",\r\n    \"rspData\": [\r\n         {                         \r\n            \"recIdeunikeyRcom\": 61,\r\n            \"recIdentifkeyRcom\": \"1065808999\",\r\n            \"recProfiltypeRcom\": \"1\",\r\n            \"recProfilpkeyRcom\": \"1\",\r\n            \"recProftypecmRcom\": \"1\",\r\n            \"recIdentifkeyReus\": \"1\",\r\n            \"apjIdentifkeyAphp\": \"1\",\r\n            \"recTreemlevelRcom\": \"1\",\r\n            \"recTreemkeymsRcom\": \"1\",\r\n            \"recTreemcountRcom\": 1,\r\n            \"recMessagorigRcom\": \"1\",\r\n            \"recMessagtypeRcom\": \"1\",\r\n            \"recMessagtconRcom\": \"1\",\r\n            \"recMessagbodyRcom\": \"Este es un comentario es muy bueno\",\r\n            \"recMessagdateRcom\": \"2023-05-25\",\r\n            \"recMessagtimeRcom\": 18.23,\r\n            \"recEditmddateRcom\": \"2023-05-25\",\r\n            \"recEditmdtimeRcom\": 18.23,\r\n            \"recEditdedateRcom\": \"0001-01-01\",\r\n            \"recEditdetimeRcom\": 0.0,\r\n            \"recClicpositiRcom\": 1,\r\n            \"recClicnegatvRcom\": 1,\r\n            \"recClicklegalRcom\": 1,\r\n            \"recCheckmarckRcom\": \"1\",\r\n            \"recCheckmdateRcom\": \"2023-05-25\",\r\n            \"recCheckmtimeRcom\": 18.23,\r\n            \"recOrdviewkeyRcom\": 230525182334,\r\n            \"recRegisstateRcom\": \"1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/comments/update",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"comments",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comments-changestatus",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"recPKey\": 57\r\n    }\r\n]   \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/comments/changestatus",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"comments",
+						"changestatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gallery-drawingping",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"recPKey\": 211,\r\n        \"recDrawPing\":2\r\n    }\r\n]   \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/gallery/drawingping",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"gallery",
+						"drawingping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ArtistProfile-getall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/artistprofile/getall",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"artistprofile",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ArtistProfile-getall-Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/artistprofile?currentpage=1&pagesize=10&parameter=0&filter=10572001036",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"artistprofile"
+					],
+					"query": [
+						{
+							"key": "currentpage",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "10"
+						},
+						{
+							"key": "parameter",
+							"value": "0"
+						},
+						{
+							"key": "filter",
+							"value": "10572001036"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ArtistProfile-Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"OK\",\r\n    \"rspMessage\": \"OK\",\r\n    \"rspParentKey\": \"NA\",\r\n    \"rspAppKey\": \"NA\",\r\n    \"rspData\": [\r\n        {\r\n            \"apjNroregAphp\": \"10572001036\",\r\n            \"apjTitgruAphp\": \"Raúl Cudris\",\r\n            \"apjLnkgruAphp\": \"RaulCudris\",\r\n            \"apjExlemaAphp\": \"1\",\r\n            \"apjTipartAphp\": \"1\",\r\n            \"recNroregReus\": \"205\",\r\n            \"sisCodpaiSipa\": \"2050\",\r\n            \"sisCodproSipr\": \"205020\",\r\n            \"sisIdedptSidp\": \"1\",\r\n            \"apjGeoestAphp\": \"1\",\r\n            \"apjGeolatAphp\": -73.2625,\r\n            \"apjGeolonAphp\": 5.0,\r\n            \"apjValtraAphp\": 3.5,\r\n            \"apjValcalAphp\": 4.3,\r\n            \"apjValpunAphp\": 3.8,\r\n            \"apjValpopAphp\": 0.0,\r\n            \"apjTotsegAphp\": 2,\r\n            \"apjEstautAphp\": \"1\",\r\n            \"apjEstgesAphp\": \"1\",\r\n            \"apjEstdisAphp\": \"1\",\r\n            \"apjEstlocAphp\": \"1\",\r\n            \"apjEstpenAphp\": \"1\",\r\n            \"apjPeifecAphp\": \"2023-06-05\",\r\n            \"apjPeihorAphp\": 0.0,\r\n            \"apjPeikeyAphp\": 1,\r\n            \"apjPeffecAphp\": \"2023-06-05\",\r\n            \"apjPefhorAphp\": 0.0,\r\n            \"apjPefkeyAphp\": 0,\r\n            \"apjLegalrAphp\": 1,\r\n            \"apjKeyestAphp\": \"RaulCudris raul cudris cantante voz lider interprete primera voz\",\r\n            \"apjKeylocAphp\": \"tar23\",\r\n            \"apjKeyageAphp\": \"211022\",\r\n            \"apjKeyraiAphp\": 211106,\r\n            \"apjKeyrafAphp\": 0,\r\n            \"sisCountaRkey\": 2,\r\n            \"sisCountbRkey\": 0,\r\n            \"sisCountcRkey\": 0,\r\n            \"sisCountdRkey\": 12,\r\n            \"sisCounteRkey\": 1,\r\n            \"apjEstregAphp\": 3\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/artistprofile/create",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"artistprofile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Artistprofile-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rspValue\": \"OK\",\r\n    \"rspMessage\": \"OK\",\r\n    \"rspParentKey\": \"NA\",\r\n    \"rspAppKey\": \"NA\",\r\n    \"rspData\": [\r\n         {\r\n           \"recUnikeyAphp\": 101,\r\n            \"apjNroregAphp\": \"10572001101\",\r\n            \"apjTitgruAphp\": \"Raúl Cudris\",\r\n            \"apjLnkgruAphp\": \"RaulCudris\",\r\n            \"apjExlemaAphp\": \"1\",\r\n            \"apjTipartAphp\": \"1\",\r\n            \"recNroregReus\": \"205\",\r\n            \"sisCodpaiSipa\": \"2050\",\r\n            \"sisCodproSipr\": \"205020\",\r\n            \"sisIdedptSidp\": \"1\",\r\n            \"apjGeoestAphp\": \"1\",\r\n            \"apjGeolatAphp\": -73.2625,\r\n            \"apjGeolonAphp\": 5.0,\r\n            \"apjValtraAphp\": 3.5,\r\n            \"apjValcalAphp\": 4.3,\r\n            \"apjValpunAphp\": 3.8,\r\n            \"apjValpopAphp\": 0.0,\r\n            \"apjTotsegAphp\": 2,\r\n            \"apjEstautAphp\": \"1\",\r\n            \"apjEstgesAphp\": \"1\",\r\n            \"apjEstdisAphp\": \"1\",\r\n            \"apjEstlocAphp\": \"1\",\r\n            \"apjEstpenAphp\": \"1\",\r\n            \"apjPeifecAphp\": \"2023-06-05\",\r\n            \"apjPeihorAphp\": 0.0,\r\n            \"apjPeikeyAphp\": 1,\r\n            \"apjPeffecAphp\": \"2023-06-05\",\r\n            \"apjPefhorAphp\": 0.0,\r\n            \"apjPefkeyAphp\": 0,\r\n            \"apjLegalrAphp\": 1,\r\n            \"apjKeyestAphp\": \"RaulCudris raul cudris cantante voz lider interprete primera voz\",\r\n            \"apjKeylocAphp\": \"tar23\",\r\n            \"apjKeyageAphp\": \"211022\",\r\n            \"apjKeyraiAphp\": 211106,\r\n            \"apjKeyrafAphp\": 0,\r\n            \"sisCountaRkey\": 2,\r\n            \"sisCountbRkey\": 0,\r\n            \"sisCountcRkey\": 0,\r\n            \"sisCountdRkey\": 12,\r\n            \"sisCounteRkey\": 1,\r\n            \"apjEstregAphp\": \"1\"\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/artistprofile/update",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"artistprofile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Artistprofile-getId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6070/api/artistprofile/7",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"artistprofile",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Artistprofile-Changestatus",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"recPKey\": 103,\r\n        \"recEstreg\":2\r\n    }\r\n]   \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6070/api/artistprofile/changestatus",
+					"host": [
+						"localhost"
+					],
+					"port": "6070",
+					"path": [
+						"api",
+						"artistprofile",
+						"changestatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Artistprofile-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[  \r\n    {\r\n       \"recPKey\": 101\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6071/api/artistprofile/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "6071",
+					"path": [
+						"api",
+						"artistprofile",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

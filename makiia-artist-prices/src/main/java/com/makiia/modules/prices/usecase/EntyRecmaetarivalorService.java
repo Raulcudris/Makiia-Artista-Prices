@@ -1,4 +1,15 @@
 package com.makiia.modules.prices.usecase;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.persistence.PersistenceException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Service;
+
 import com.makiia.crosscutting.domain.model.EntyDeleteDto;
 import com.makiia.crosscutting.domain.model.EntyRecmaetarivalorDto;
 import com.makiia.crosscutting.domain.model.EntyRecmaetarivalorResponse;
@@ -8,12 +19,6 @@ import com.makiia.crosscutting.messages.SearchMessages;
 import com.makiia.modules.bus.services.UseCase;
 import com.makiia.modules.bus.services.UsecaseServices;
 import com.makiia.modules.prices.dataproviders.jpa.JpaEntyRecmaetarivalorDataProviders;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
-import org.springframework.stereotype.Service;
-import javax.annotation.PostConstruct;
-import javax.persistence.PersistenceException;
-import java.util.List;
 
 
 @UseCase
@@ -27,19 +32,28 @@ public class EntyRecmaetarivalorService extends UsecaseServices<EntyRecmaetariva
         this.ijpaDataProvider = jpaDataProviders;
     }
 
+     private String localYear;
+     private int year;
+
     public EntyRecmaetarivalorResponse saveBefore(EntyRecmaetarivalorResponse dto) throws EBusinessException {
         try {
             //EntyRecmaetarivalorDto
 
             List<EntyRecmaetarivalorDto> dtoAux = this.ijpaDataProvider.save(dto.getRspData());
+              localYear = LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
+               year = Integer.parseInt(localYear);
 
             // Generar llave auxilar rec_secreg_retp  -> Codigo secuencial unico de la tarifa o precio venta de un item del HomePage
             for (EntyRecmaetarivalorDto dtox : dtoAux) {
                 if (dtox.getRecSecregRetp().equals("NA")) {
                     // concatenar
-                    dtox.setRecSecregRetp(dtox.getApjNroregAphp() + "TR" + dtox.getRecUnikeyRetp());
+                    dtox.setRecSecregRetp(year+"" + dtox.getRecUnikeyRetp());
                 }
             }
+            dto.setRspValue("OK");
+            dto.setRspMessage("OK");             
+            dto.setRspParentKey("NA");             
+            dto.setRspAppKey("NA");
             dtoAux = this.ijpaDataProvider.save(dtoAux);
             dto.setRspData(dtoAux);
 
@@ -64,6 +78,10 @@ public class EntyRecmaetarivalorService extends UsecaseServices<EntyRecmaetariva
             for (EntyRecmaetarivalorDto dtox : dtoAux) {
                 dtox = this.ijpaDataProvider.update(dtox.getRecUnikeyRetp(),dtox);
             }
+            dto.setRspValue("OK");
+            dto.setRspMessage("OK");             
+            dto.setRspParentKey("NA");             
+            dto.setRspAppKey("NA");
             dto.setRspData(dtoAux);
 
             return dto;

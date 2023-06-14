@@ -1,4 +1,19 @@
 package com.makiia.modules.prices.dataproviders.jpa;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import javax.persistence.PersistenceException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
 import com.makiia.crosscutting.domain.model.EntyRecmaetarivalorDto;
 import com.makiia.crosscutting.domain.model.EntyRecmaetarivalorResponse;
 import com.makiia.crosscutting.domain.model.PaginationResponse;
@@ -10,18 +25,6 @@ import com.makiia.crosscutting.patterns.Translator;
 import com.makiia.crosscutting.persistence.entity.EntyRecmaetarivalor;
 import com.makiia.crosscutting.persistence.repository.EntyRecmaetarivalorRepository;
 import com.makiia.modules.prices.dataproviders.IjpaEntyRecmaetarivalorDataProviders;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import javax.persistence.PersistenceException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @DataProvider
 public class JpaEntyRecmaetarivalorDataProviders implements IjpaEntyRecmaetarivalorDataProviders {
@@ -272,7 +275,6 @@ public class JpaEntyRecmaetarivalorDataProviders implements IjpaEntyRecmaetariva
         dto.setRecValhorRetp(entyRecmaetarivalor.getRecValhorRetp());
         dto.setRecPrecioRetp(entyRecmaetarivalor.getRecPrecioRetp());
         dto.setRecEstregRetp(entyRecmaetarivalor.getRecEstregRetp());
-        dto.setRecTituloRepe("NA");
         return  dto;
     }
 

@@ -1,5 +1,9 @@
 package com.makiia.crosscutting.domain.model;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Data
@@ -21,9 +25,8 @@ public class EntyRecmaetarivalorDto {
     private Integer recOrdvisRetp;
     private String  recTipmonRetm;
     private Integer recCanhorRetp;
-    private Double  recValhorRetp;
-    private Double  recPrecioRetp;
+    private Long  recValhorRetp;
+    private Long  recPrecioRetp;
     private String  recEstregRetp;
-    private String  recTituloRepe;
 
 }

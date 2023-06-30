@@ -39,9 +39,10 @@ public class EntyRecmaetarivalorWebApi {
     @ApiOperation(httpMethod = ApiConstants.GET_HTTP, value = ApiConstants.GET_ALL_DESC, notes = "")
     public ResponseEntity<EntyRecmaetarivalorResponse> getAll( @RequestParam(value = "currentpage",required = false, defaultValue = "0") int CurrentPage,
                                                                @RequestParam(value = "pagesize",  required = false,  defaultValue = "10") int PageSize,
+                                                               @RequestParam(value="parameter",required = false) String parameter,
                                                                @RequestParam(value = "filter") String filter)
                                                         throws EBusinessException, MicroEventException {
-        return new ResponseEntity<>(service.getAll(CurrentPage, PageSize,filter), HttpStatus.OK);
+        return new ResponseEntity<>(service.getAll(CurrentPage, PageSize,parameter,filter), HttpStatus.OK);
     }
 
 

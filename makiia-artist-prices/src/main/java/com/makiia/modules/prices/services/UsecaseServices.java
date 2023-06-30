@@ -1,15 +1,20 @@
-package com.makiia.modules.bus.services;
+package com.makiia.modules.prices.services;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.makiia.crosscutting.domain.enums.ProcessName;
 import com.makiia.crosscutting.domain.enums.Status;
 import com.makiia.crosscutting.domain.model.EntyRecmaetarivalorResponse;
 import com.makiia.crosscutting.domain.model.traceability.TransactionFile;
 import com.makiia.crosscutting.exceptions.ExceptionBuilder;
-import com.makiia.crosscutting.exceptions.Main.EBusinessException;
 import com.makiia.crosscutting.exceptions.MicroEventException;
-import com.makiia.modules.bus.contracts.IjpaDataProviders;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.*;
+import com.makiia.crosscutting.exceptions.Main.EBusinessException;
+import com.makiia.modules.prices.contracts.IjpaDataProviders;
 
 public class UsecaseServices <T, K> {
 
@@ -64,7 +69,7 @@ public class UsecaseServices <T, K> {
      * @throws EBusinessException  excepcion
      * @throws MicroEventException excepcion
      */
-    public EntyRecmaetarivalorResponse getAll(int currentPage , int PageSize , String filter) throws EBusinessException, MicroEventException {
+    public EntyRecmaetarivalorResponse getAll(int currentPage , int PageSize , String parameter,String filter) throws EBusinessException, MicroEventException {
         String transactionalId = UUID.randomUUID().toString();
 
         try {
@@ -73,7 +78,7 @@ public class UsecaseServices <T, K> {
                     ProcessName.EXTERNAL.getDescription(), ProcessName.RECEPTION.getName(),
                     ProcessName.RECEPTION.getDescription(), getAllTraceability());
 
-            return ((IjpaDataProviders<T>) ijpaDataProvider).getAll(currentPage, PageSize , filter);
+            return ((IjpaDataProviders<T>) ijpaDataProvider).getAll(currentPage, PageSize ,parameter ,filter);
         } catch (EBusinessException e) {
             traceabilityService.createTraceabilityEventDocument(transactionalId, Status.FAIL.getDescription(),
                     TransactionFile.builder().build(), ProcessName.EXTERNAL.getDescription(),

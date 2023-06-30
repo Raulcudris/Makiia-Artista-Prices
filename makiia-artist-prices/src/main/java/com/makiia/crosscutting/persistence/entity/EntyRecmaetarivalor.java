@@ -80,11 +80,11 @@ public class EntyRecmaetarivalor implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "rec_valhor_retp")
-    private Long recValhorRetp;
+    private Double recValhorRetp;
 
     @Basic(optional = false)
     @Column(name = "rec_precio_retp")
-    private Long recPrecioRetp;
+    private Double recPrecioRetp;
 
     @Basic(optional = false)
     @Column(name = "rec_estreg_retp")

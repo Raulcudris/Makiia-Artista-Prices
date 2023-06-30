@@ -74,11 +74,19 @@ public class JpaEntyRecmaetarivalorDataProviders implements IjpaEntyRecmaetariva
 
 
     @Override
-    public EntyRecmaetarivalorResponse getAll(int currentPage ,int totalPageSize,String filter) throws EBusinessException {
+    public EntyRecmaetarivalorResponse getAll(int currentPage ,int totalPageSize,String parameter, String filter) throws EBusinessException {
         try {
             currentPage = currentPage -1;
             Pageable pageable = PageRequest.of(currentPage, totalPageSize);
-            Page<EntyRecmaetarivalor> ResponsePage = repository.findNroReg(filter,pageable);
+            Page<EntyRecmaetarivalor> ResponsePage = null;
+
+            if(parameter.equals("PKEY")){
+                ResponsePage = repository.findByrecUnikeyRetp(Integer.parseInt(filter), pageable);
+            }else{
+                //FKEY
+                 ResponsePage = repository.findNroReg(filter,pageable);
+            }
+
             List<EntyRecmaetarivalor> ListPage = ResponsePage.getContent();
             List<EntyRecmaetarivalorDto> content  = ListPage.stream().map(p ->mapToDto(p)).collect(Collectors.toList());
 

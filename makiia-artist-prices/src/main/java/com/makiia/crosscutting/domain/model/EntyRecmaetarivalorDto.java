@@ -25,8 +25,8 @@ public class EntyRecmaetarivalorDto {
     private Integer recOrdvisRetp;
     private String  recTipmonRetm;
     private Integer recCanhorRetp;
-    private Long  recValhorRetp;
-    private Long  recPrecioRetp;
+    private Double  recValhorRetp;
+    private Double  recPrecioRetp;
     private String  recEstregRetp;
 
 }

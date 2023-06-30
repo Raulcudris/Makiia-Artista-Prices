@@ -16,9 +16,9 @@ import com.makiia.crosscutting.domain.model.EntyRecmaetarivalorResponse;
 import com.makiia.crosscutting.exceptions.ExceptionBuilder;
 import com.makiia.crosscutting.exceptions.Main.EBusinessException;
 import com.makiia.crosscutting.messages.SearchMessages;
-import com.makiia.modules.bus.services.UseCase;
-import com.makiia.modules.bus.services.UsecaseServices;
 import com.makiia.modules.prices.dataproviders.jpa.JpaEntyRecmaetarivalorDataProviders;
+import com.makiia.modules.prices.services.UseCase;
+import com.makiia.modules.prices.services.UsecaseServices;
 
 
 @UseCase

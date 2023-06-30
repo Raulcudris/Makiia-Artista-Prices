@@ -1,13 +1,14 @@
-package com.makiia.modules.bus.contracts;
+package com.makiia.modules.prices.contracts;
+import java.util.List;
+
 import com.makiia.crosscutting.domain.model.EntyRecmaetarivalorResponse;
 import com.makiia.crosscutting.exceptions.Main.EBusinessException;
-import java.util.List;
 
 public interface  IjpaDataProviders<T> {
 
     EntyRecmaetarivalorResponse getAll() throws EBusinessException;
 
-    EntyRecmaetarivalorResponse getAll (int currentPage , int PageSize, String filter) throws EBusinessException;
+    EntyRecmaetarivalorResponse getAll (int currentPage , int PageSize,String parameter ,String filter) throws EBusinessException;
 
     T get(Integer id) throws EBusinessException;
 
